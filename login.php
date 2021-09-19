@@ -44,12 +44,26 @@
 // $db_pass - password already stored at database 
               $pass_decode = password_verify($password,$db_pass);
 
+               if($pass_decode)
+               {
+                  echo"Login Successful";
+
+               }else
+               {
+
+                  echo " Login Incorrect ";
+
+               }
+
+
             }
-            
- 
+            else
+            {
+                
+              echo " Invalid Email ";  
 
+            }
         }
-
 
      ?>
 
