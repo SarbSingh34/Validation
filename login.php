@@ -36,8 +36,13 @@
             {
 // In present row in which mail is passed anad try to fetch some data 
               $email_pass = mysqli_fetch_assoc($query);
-// in this checked mail's password is fetched only 
+// In this checked mail's password is fetched only 
               $db_pass = $email_pass['password'];
+
+//  In this password is decoded 
+// $password - password enter at time
+// $db_pass - password already stored at database 
+              $pass_decode = password_verify($password,$db_pass);
 
             }
             
