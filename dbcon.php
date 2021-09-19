@@ -11,16 +11,18 @@
     {
       ?>
     <script>
+
             alert(" Connection  Done");
+
     </script>
-    <?php
+      <?php
     }else
     {
-        ?>
+      ?>
         <script>
             alert(" Connection not successful ");
         </script>
-        <?php
+      <?php
     }
 
 ?>
