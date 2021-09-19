@@ -46,22 +46,16 @@
 
                if($pass_decode)
                {
-                  echo"Login Successful";
-
-               }else
-               {
-
-                  echo " Login Incorrect ";
-
+                  echo "Login Successful";
                }
-
-
+               else
+               {
+                  echo " Login Incorrect ";
+               }
             }
             else
-            {
-                
+            {   
               echo " Invalid Email ";  
-
             }
         }
 
