@@ -12,7 +12,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+ <?php 
+
+if(isset($_POST['submit']))
+  {
+     $username = mysqli_real_escape_string($conn, $_POST['username']);
+     $email =  mysqli_real_escape_string ($conn,$_POST['email']);
+     $mobile = mysqli_real_escape_string ( $conn,$_POST['mobile']);
+     $password = mysqli_real_escape_string ($conn,$_POST['password']);
+     $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
+  
+  }
+
+ ?>
+
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
             <div class = "first-middle" style = "text-align: center;">
@@ -25,36 +39,36 @@
                             <br>
 
                             <span> -----------  OR ---------  </span>
-                            <form class = "new" style = "text-align: center;margin: auto;">
+                            <form action = "" method = "POST"class = "new" style = "text-align: center;margin: auto;">
                                <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
-                                   <input type="name" class="form-control" name = "fullname" id="inputEmail3" placeholder="Fullname" required>
+                                   <input type="username" class="form-control" name = "username" placeholder="Fullname" required>
                                   </div>
                               </div>
                                <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
-                                   <input type="email" class="form-control"  name = "email" id="inputPassword3" placeholder="Email address"  required>
+                                   <input type="email" class="form-control"  name = "email"  placeholder="Email address"  required>
                                  </div>
                                </div>
                                <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="mobile" class="form-control"   name = "email" id="inputPassword3" placeholder="Phone number" required>
+                                  <input type="mobile" class="form-control"   name = "mobile"  placeholder="Phone number" required>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"  name = "password"  id="inputPassword3" placeholder="Create Password " required>
+                                  <input type="password" class="form-control"  name = "password"  placeholder="Create Password " required>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"   name = "cpassword"  id="inputPassword3" placeholder="Repeat Password"  required>
+                                  <input type="password" class="form-control"   name = "cpassword"  placeholder="Repeat Password"  required>
                                 </div>
                               </div>
                         
                         <div class="form-group row">
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary"> Create Account  </button>
+                            <button type="submit" name = "submit" class="btn btn-primary"> Create Account  </button>
                             <br>
                             <br>
                             <a href = "/" style = "color:black">  Have an account?  </a>    <a href = "/"> Login  </a> 
