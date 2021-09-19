@@ -30,12 +30,55 @@
 
   // password is encyrpted here 
             $pass = password_hash($password,PASSWORD_BCRYPT);
-            $cpassword = password_hash($password,PASSWORD_BCRYPT);
+            $cpass = password_hash($password,PASSWORD_BCRYPT);
 
  // this query is used to first select if same mail id 
  //  in second line check this in database  
             $emailquery = " select  * from registration where email = '$email' ";
             $query = mysqli_query($conn,$emailquery);
+
+// check if this line or msil exists more than 0 zero 
+            $emailcount = mysqli_num_rows($query);
+
+            if($emailcount>0)
+            {
+               echo " email already exists ";
+            }else
+            {
+                if($password === $cpassword)
+                {
+
+                   $insertquery = "insert into registration (username,email,mobile,password,cpassword) values('$username','$email','$mobile','$pass','$cpass')";
+                   
+                   $iquery = mysqli_query($conn,$insertquery);
+
+                    if($iquery)
+                        {
+                           ?>
+                            <script>
+                                alert(" Insertion   Done in database ");
+                            </script>
+                          <?php
+                        }else
+                        {
+                          ?>
+                            <script>
+                                alert(" Insertion  error ");
+                            </script>
+                          <?php
+                        }
+
+
+                }
+                else
+                {
+
+                    echo "password don't match";
+
+                }
+             
+                
+            }
         
         }
 
