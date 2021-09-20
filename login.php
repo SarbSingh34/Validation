@@ -41,7 +41,7 @@
             // check if mail is present 
             if($email_count)
             {
-                
+
 // In present row in which mail is passed and try to fetch some data 
               $email_pass = mysqli_fetch_assoc($query);
 // In this checked mail's password is fetched only 
@@ -89,6 +89,7 @@
                             <br>
 
                             <span> -----------  OR ---------  </span>
+                            <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
                             <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                               
                               <div class="form-group row">

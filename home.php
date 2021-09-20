@@ -21,8 +21,8 @@
 
 <body>
     <h1>
-
-             THis is the Home Page made by <?php   echo  $_SESSION['username']; ?>
+                      <!-- With the help of Session we  get the value entered and printed on home pg -->
+             This is the Home Page made by <?php   echo  $_SESSION['username']; ?>
 
     </h1>
 
