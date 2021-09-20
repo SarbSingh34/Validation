@@ -72,7 +72,7 @@
                            http://localhost:8000/activate.php?token=$token ";
                            $sender_email = "From: sarbbsandhu555@gmail.com";
             
-                           if(ini_set($receiver,$sender_email))
+                           if(ini_set($sender_email,$receiver))
                              {
                                 $_SESSION['msg'] = "Check your mail to activate your account $receiver ";
                                 header('location:login.php');
