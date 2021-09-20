@@ -1,3 +1,9 @@
+<?php
+
+  session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +22,7 @@
 <body>
     <h1>
 
-             THis is the Home Page 
+             THis is the Home Page made by <?php   echo  $_SESSION['username']; ?>
 
     </h1>
 
