@@ -2,6 +2,14 @@
 
   session_start();
 
+  if(!isset($_SESSION['username']))
+  {
+
+     echo" You are Logged Out ";
+     header('location:login.php');
+
+  }
+
 ?>
 
 <!DOCTYPE html>
