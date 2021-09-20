@@ -17,7 +17,7 @@
      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Document </title>
 </head>
 <body>
     <?php
@@ -30,7 +30,6 @@
              $email = $_POST['email'];
              $password = $_POST['password'];
            
-
 // This line is used for selecting mail 
 // second line is used for refelcting query in database
             $email_check = " select * from registration where email = '$email' ";
@@ -42,14 +41,14 @@
             // check if mail is present 
             if($email_count)
             {
-// In present row in which mail is passed anad try to fetch some data 
+// In present row in which mail is passed and try to fetch some data 
               $email_pass = mysqli_fetch_assoc($query);
 // In this checked mail's password is fetched only 
               $db_pass = $email_pass['password'];
 
 //  In this password is decoded 
 // $password - password enter at time
-// $db_pass - password already stored at database 
+// $db_pass  - password already stored at database 
               $pass_decode = password_verify($password,$db_pass);
 
             if($pass_decode)
