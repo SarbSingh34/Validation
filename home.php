@@ -2,6 +2,8 @@
 
   session_start();
 
+//   This is written when user  press backs button it will not lead to back pages after logout
+//   If in Session username is not define  then it shows log out
   if(!isset($_SESSION['username']))
   {
 
