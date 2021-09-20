@@ -60,6 +60,22 @@
 
                     if($iquery)
                         {
+
+                          $subject = "Email Activation";
+                          $body = "Hi.$username . Click here  too activate your Account 
+                           http://localhost:8000/activate.php?token=$token ";
+                           $sender_email = "From: sarbbsandhu555@gmail.com";
+            
+                           if(mail($email,$subject,$body,$sender_email))
+                           {
+                             $_SESSION['msg'] = "Check your mail to activate your account $email ";
+                             header('location:login.php');
+
+                           }else
+                           {
+                               echo " Email Sending Failed ";
+                           }
+
                            ?>
                             <script>
                                 alert(" Insertion   Done in database ");
