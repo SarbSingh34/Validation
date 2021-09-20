@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -22,10 +29,11 @@
 
              $email = $_POST['email'];
              $password = $_POST['password'];
+           
 
 // This line is used for selecting mail 
 // second line is used for refelcting query in database
-            $email_check = "select * from registration where email = '$email'";
+            $email_check = " select * from registration where email = '$email' ";
             $query = mysqli_query($conn,$email_check);
 
 // This is used for checking that mail is present in rows or  not ? 
@@ -44,13 +52,13 @@
 // $db_pass - password already stored at database 
               $pass_decode = password_verify($password,$db_pass);
 
-               if($pass_decode)
+            if($pass_decode)
                {
                   echo "Login Successful";
                }
                else
                {
-                  echo " Login Incorrect ";
+                  echo " password Incorrect ";
                }
             }
             else
@@ -74,12 +82,13 @@
                             <br>
 
                             <span> -----------  OR ---------  </span>
-                            <form action = "" method = "POST" class = "new" style = "text-align: center;margin: auto;">
-                               <div class="form-group row">
+                            <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
+                              
+                              <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
-                                   <input type="username" class="form-control" name = "username" placeholder="Fullname" required>
-                                  </div>
-                              </div>
+                                   <input type="email" class="form-control"  name = "email"  placeholder="Email address"  required>
+                                 </div>
+                               </div>
                              
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">

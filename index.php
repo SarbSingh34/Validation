@@ -37,13 +37,14 @@
             $emailquery = " select  * from registration where email = '$email' ";
             $query = mysqli_query($conn,$emailquery);
 
-// check if this line or msil exists more than 0 zero 
+// check if this line or mail exists more than 0 zero 
             $emailcount = mysqli_num_rows($query);
 
             if($emailcount>0)
             {
                echo " email already exists ";
-            }else
+            }
+            else
             {
                 if($password === $cpassword)
                 {
