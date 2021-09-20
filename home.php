@@ -7,7 +7,7 @@
   if(!isset($_SESSION['username']))
   {
 
-     echo" You are Logged Out ";
+     echo " You are Logged Out ";
      header('location:login.php');
 
   }
