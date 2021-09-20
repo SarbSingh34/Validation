@@ -91,7 +91,7 @@
                              
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"   name = "cpassword"  placeholder="Repeat Password"  required>
+                                  <input type="password" class="form-control"   name = "password"  placeholder=" Enter  Password"  required>
                                 </div>
                               </div>
                         
