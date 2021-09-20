@@ -26,7 +26,7 @@
 
     </h1>
 
-          <a href = "logout.php">   Logout </a>
+          <a href = "logout.php" style = "color:red">   Logout </a>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
