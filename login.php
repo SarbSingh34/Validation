@@ -41,10 +41,13 @@
             // check if mail is present 
             if($email_count)
             {
+                
 // In present row in which mail is passed and try to fetch some data 
               $email_pass = mysqli_fetch_assoc($query);
 // In this checked mail's password is fetched only 
               $db_pass = $email_pass['password'];
+// if we used Session then we can fetch name of the email to represent anywhere
+              $_SESSION['username'] = $email_pass['username'];
 
 //  In this password is decoded 
 // $password - password enter at time
@@ -54,6 +57,11 @@
             if($pass_decode)
                {
                   echo "Login Successful";
+                  ?>
+                  <script>   
+                  location.replace("home.php")  ;
+                        </script>
+                  <?php
                }
                else
                {
