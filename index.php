@@ -32,9 +32,14 @@
             $pass = password_hash($password,PASSWORD_BCRYPT);
             $cpass = password_hash($password,PASSWORD_BCRYPT);
 
+            // here token is created for every diff. email id verification
+            // bin2hex convert digit from binary to hex 
+            // random bytes are  used to generate random string length of 15(mentioned)
+            $token = bin2hex(random_bytes(15));
+
  // this query is used to first select if same mail id 
  //  in second line check this in database  
-            $emailquery = " select  * from registration where email = '$email' ";
+            $emailquery = " select  * from registrationcc  where email = '$email' ";
             $query = mysqli_query($conn,$emailquery);
 
 // check if this line or mail exists more than 0 zero 
@@ -49,7 +54,7 @@
                 if($password === $cpassword)
                 {
 
-                   $insertquery = "insert into registration (username,email,mobile,password,cpassword) values('$username','$email','$mobile','$pass','$cpass')";
+                   $insertquery = "insert into registrationcc (username,email,mobile,password,cpassword,token,status) values('$username','$email','$mobile','$pass','$cpass','$token','inactive')";
                    
                    $iquery = mysqli_query($conn,$insertquery);
 
@@ -97,9 +102,9 @@
                             <br>
 
                             <span> -----------  OR ---------  </span>
-                            <form action = "" method = "POST"class = "new" style = "text-align: center;margin: auto;">
+                            <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                                <div class="form-group row">
-                                 <div class="col-3" style = "margin:auto">
+                                  <div class="col-3" style = "margin:auto">
                                    <input type="username" class="form-control" name = "username" placeholder="Fullname" required>
                                   </div>
                               </div>
@@ -110,11 +115,11 @@
                                </div>
                                <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="mobile" class="form-control"   name = "mobile"  placeholder="Phone number" required>
+                                  <input type="mobile" class = "form-control"   name = "mobile"  placeholder="Phone number" required>
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <div class="col-3" style = "margin:auto">
+                              <div class = "form-group row">
+                                <div class = "col-3" style = "margin:auto">
                                   <input type="password" class="form-control"  name = "password"  placeholder="Create Password " required>
                                 </div>
                               </div>
