@@ -9,7 +9,8 @@
 
     if($conn)
     {
-      ?>
+
+    ?>
     <script>
 
             alert(" Connection  Done");
