@@ -32,7 +32,7 @@
            
 // This line is used for selecting mail 
 // second line is used for refelcting query in database
-            $email_check = " select * from registration where email = '$email' and status = 'active' ";
+            $email_check = " select * from registrationcc where email = '$email' and status = 'active' ";
             $query = mysqli_query($conn,$email_check);
 
 // This is used for checking that mail is present in rows or  not ? 
@@ -91,7 +91,24 @@
                             <span> -----------  OR ---------  </span>
                             <div> 
 
-                               <p class = "bg-success text-white px-12 "> <?php  echo $_SESSION['msg'];  ?> </p>
+                               <p class = "bg-success text-white px-12 ">
+                                <?php  
+                               
+                                     if(isset($_SESSION['msg']))
+                                     {
+                                      echo $_SESSION['msg'];
+
+                                     }
+                                      else
+                                      {
+
+                                        echo $_SESSION['msg'] = "You are Logged out . Please Login";
+
+                                      }
+
+
+
+                                ?> </p>
 
                             </div>
                             <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
