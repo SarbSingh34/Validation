@@ -69,9 +69,11 @@
                          
                           $subject = "Email Activation";
                           $body = "Hi Mr. $username  Click here  too activate your Account 
-                           http://localhost:8000/activate.php?token=$token ";
-                           $sender_email = "From: sarbbsandhu555@gmail.com";
+                           http://localhost:8000/activate.php?token=$token "; /* token is used and got from $token  */
+                           $sender_email = "From: sarbbsandhu555@gmail.com";  /* from which data is sent  */
             
+                          //  In this  mail function is used to send mail and passed four parameters
+                          //  $email get  data from front end and sent to that  
                            if(mail($email,$subject,$body,$sender_email))
                              {
                                 $_SESSION['msg'] = "Check your mail to activate your account $email ";
