@@ -89,6 +89,11 @@
                             <br>
 
                             <span> -----------  OR ---------  </span>
+                            <div> 
+
+                               <p class = "bg-success text-white px-4"> <?php  echo $_SESSION['msg'];  ?> </p>
+
+                            </div>
                             <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
                             <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                               
