@@ -66,15 +66,15 @@
 
                     if($iquery)
                         {
-                          $receiver = "mrsinghbusiness05@gmail.com";
+                         
                           $subject = "Email Activation";
-                          $body = "Hi.$username . Click here  too activate your Account 
+                          $body = "Hi Mr. $username  Click here  too activate your Account 
                            http://localhost:8000/activate.php?token=$token ";
                            $sender_email = "From: sarbbsandhu555@gmail.com";
             
-                           if(ini_set($sender_email,$receiver))
+                           if(mail($email,$subject,$body,$sender_email))
                              {
-                                $_SESSION['msg'] = "Check your mail to activate your account $receiver ";
+                                $_SESSION['msg'] = "Check your mail to activate your account $email ";
                                 header('location:login.php');
 
                               }else
