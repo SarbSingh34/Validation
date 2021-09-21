@@ -76,7 +76,7 @@
                           //  $email get  data from front end and sent to that  
                            if(mail($email,$subject,$body,$sender_email))
                              {
-                                $_SESSION['msg'] = "Check your mail to activate your account $email ";
+                                $_SESSION['msg'] = "  Check your mail to activate your account $email ";
                                 header('location:login.php');
 
                               }else
