@@ -109,7 +109,6 @@
             }
         }
  ?>
-
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
             <div class = "first-middle" style = "text-align: center;">
