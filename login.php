@@ -56,13 +56,13 @@
 
             if($pass_decode)
                {
-
                       if(isset($_POST['rememberme']))
                       {
                           setcookie('emailcookie',$email,time()+86400);
-                          setcookie('passwordcookie',$password,time()+86400);
+                          // setcookie('passwordcookie',$password,time()+86400);
                           header('location:home.php');
-                      }else
+                      }
+                      else
                       {
 
                         header('location:home.php');
@@ -81,8 +81,6 @@
         }
 
      ?>
-
-
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
             <div class = "first-middle" style = "text-align: center;">
@@ -117,25 +115,35 @@
                               
                               <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
-                                   <input type="email" class="form-control"  name = "email"  placeholder="Email address"  required>
+                                   <input type = "email" class="form-control"  name = "email"  placeholder = "Email address"  
+                                   value = "
+                                    <?php 
+                                     if(isset($_COOKIE['emailcookie']))
+                                   {
+                                      echo $_COOKIE['emailcookie'];
+                                   } 
+                                   ?>
+                                   "
+                                    required>
                                  </div>
                                </div>
                              
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"   name = "password"  placeholder = " Enter  Password"  required>
+                                  <input type="password" class="form-control"   name = "password"  placeholder = " Enter  Password"  
+                                  required>
                                 </div>
                               </div>
 
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type = "checkbox"  name = "rememberme" required> Remember Me 
+                                  <input type = "checkbox"  name = "rememberme" > Remember Me 
                                 </div>
                               </div>
                         
                         <div class="form-group row">
                         <div class="col-12">
-                            <button type="submit" name = "submit" class="btn btn-primary"> Login Now  </button>
+                            <button type = "submit" name = "submit" class="btn btn-primary"> Login Now  </button>
                             <br>
                             <br>
                             <a href = "/" style = "color:black"> Don't  Have an account?  </a>    <a href = "/"> Signup here   </a> 
