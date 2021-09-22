@@ -1,7 +1,7 @@
 <?php
 
   session_start();
-
+  ob_start();
 ?>
 
 
@@ -58,10 +58,10 @@
                {
                       if(isset($_POST['rememberme']))
                       {
-                          setcookie('emailcookie',$email,time()+86400);
-                          // setcookie('passwordcookie',$password,time()+86400);
-                          header('location:home.php');
-                      }
+                           setcookie('emailcookie',$email,time()+86400);              
+                           setcookie('passwordcookie',$password,time()+86400);  
+                           header('location:home.php');
+                      }   
                       else
                       {
 
@@ -116,21 +116,28 @@
                               <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
                                    <input type = "email" class="form-control"  name = "email"  placeholder = "Email address"  
-                                   value = "
-                                    <?php 
+                                    value = 
+                                    "<?php
                                      if(isset($_COOKIE['emailcookie']))
-                                   {
-                                      echo $_COOKIE['emailcookie'];
-                                   } 
-                                   ?>
-                                   "
+                                     {
+                                       echo  $_COOKIE['emailcookie']; 
+                                     }
+                                     ?>"
+
                                     required>
                                  </div>
                                </div>
                              
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"   name = "password"  placeholder = " Enter  Password"  
+                                  <input type="password" class = "form-control"   name = "password"  placeholder = " Enter  Password"   
+                                    value = 
+                                    "<?php
+                                     if(isset($_COOKIE['passwordcookie']))
+                                     {
+                                       echo  $_COOKIE['passwordcookie']; 
+                                     }
+                                     ?>"
                                   required>
                                 </div>
                               </div>
