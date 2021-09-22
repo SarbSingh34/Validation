@@ -35,9 +35,10 @@
              This is the Home Page made by <?php   echo  $_SESSION['username']; ?>
 
     </h1>
+ 
+          <a href =   "logout.php "  style = "color:red">   Logout </a>
 
-          <a href = "logout.php" style = "color:red">   Logout </a>
-
+  
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

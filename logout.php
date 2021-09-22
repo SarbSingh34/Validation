@@ -1,11 +1,8 @@
 <?php
 
-session_start();
-header('location:login.php');
+    session_start();
 
-    if(!isset($_SESSION['msg']))
-    {
-        echo $_SESSION['msg'] = "You are Logged out . Please Login";
-    }
+    session_destroy();
+    header('location:login.php');
    
 ?>

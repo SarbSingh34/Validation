@@ -91,7 +91,7 @@
                             <span> -----------  OR ---------  </span>
                             <div> 
 
-                               <p class = "bg-success text-white px-12 ">
+                               <p class = " bg-success text-white px-12 ">
                                 <?php  
                                
                                      if(isset($_SESSION['msg']))
