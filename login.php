@@ -96,13 +96,11 @@
                                
                                      if(isset($_SESSION['msg']))
                                      {
-                                        echo $_SESSION['msg'];
+                                         echo $_SESSION['msg'];
                                      }
                                       else
                                       {
-
-                                        echo $_SESSION['msg'] = "You are Logged out . Please Login";
-
+                                          echo $_SESSION['msg'] = " You are Logged Out . Please Login ";
                                       }
                                 ?> </p>
 
