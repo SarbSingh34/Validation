@@ -93,12 +93,12 @@
 
                                <p class = " bg-success text-white px-12 ">
                                 <?php  
-                               
+                              //  if session is working or present then show the msg 
                                      if(isset($_SESSION['msg']))
                                      {
                                          echo $_SESSION['msg'];
                                      }
-                                      else
+                                      else /* Here the msg shows session is destroyed */
                                       {
                                           echo $_SESSION['msg'] = " You are Logged Out . Please Login ";
                                       }
