@@ -1,7 +1,7 @@
 <?php
 
   session_start();
-  ob_start();
+  ob_start();  /* used for not getting error or stored output first and sent to browser */
 ?>
 
 
@@ -56,9 +56,10 @@
 
             if($pass_decode)
                {
+                //  remember me is checkbox  when Selected we set coookies
                       if(isset($_POST['rememberme']))
                       {
-                           setcookie('emailcookie',$email,time()+86400);              
+                           setcookie('emailcookie',$email,time()+86400);         /* setcookie is  function used and no. of parameters are passed   */     
                            setcookie('passwordcookie',$password,time()+86400);  
                            header('location:home.php');
                       }   
