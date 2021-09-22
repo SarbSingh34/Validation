@@ -19,7 +19,7 @@
     <title>Document</title>
 </head>
 <body>
-
+  
  <?php 
 
 // database is added here
