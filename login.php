@@ -59,8 +59,8 @@
                 //  remember me is checkbox  when Selected we set coookies
                       if(isset($_POST['rememberme']))
                       {
-                           setcookie('emailcookie',$email,time()+86400);         /* setcookie is  function used and no. of parameters are passed   */     
-                           setcookie('passwordcookie',$password,time()+86400);  
+                           setcookie('emailcookie',$email,time()+86400);         /* setcookie is  function used and no. of parameters are passed , time is for how long cookie will be present or stored    */     
+                           setcookie('passwordcookie',$password,time()+86400);   /* Cookie  For Password   */
                            header('location:home.php');
                       }   
                       else
@@ -114,10 +114,12 @@
                             <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
                             <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                               
+                            <!-- (For EMail) LINE 4 IS used to give (value = "" ) to write in box Automatically  -->
                               <div class="form-group row">
                                  <div class="col-3" style = "margin:auto">
                                    <input type = "email" class="form-control"  name = "email"  placeholder = "Email address"  
-                                    value = 
+                                    
+                                   value =  
                                     "<?php
                                      if(isset($_COOKIE['emailcookie']))
                                      {
@@ -129,6 +131,7 @@
                                  </div>
                                </div>
                              
+                                 <!-- ( For Password ) LINE 4 IS used to give (value = "" ) to write in box Automatically  -->
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
                                   <input type="password" class = "form-control"   name = "password"  placeholder = " Enter  Password"   
