@@ -35,7 +35,7 @@
              This is the Home Page made by <?php   echo  $_SESSION['username']; ?>
 
     </h1>
- 
+                <!-- link for exit  -->
           <a href =   "logout.php "  style = "color:red">   Logout </a>
 
   
