@@ -102,7 +102,8 @@
                                       {
                                           echo $_SESSION['msg'] = " You are Logged Out . Please Login ";
                                       }
-                                ?> </p>
+                                   ?> 
+                                  </p>
 
                             </div>
                             <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
