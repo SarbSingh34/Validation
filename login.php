@@ -56,13 +56,19 @@
 
             if($pass_decode)
                {
-                  echo "Login Successful";
-                  ?>
-                  <script>   
-                  location.replace("home.php")  ;
-                        </script>
-                  <?php
-               }
+
+                      if(isset($_POST['rememberme']))
+                      {
+                          setcookie('emailcookie',$email,time()+86400);
+                          setcookie('passwordcookie',$password,time()+86400);
+                          header('location:home.php');
+                      }else
+                      {
+
+                        header('location:home.php');
+                      
+                      }
+                }  
                else
                {
                   echo " password Incorrect ";
@@ -117,7 +123,13 @@
                              
                               <div class="form-group row">
                                 <div class="col-3" style = "margin:auto">
-                                  <input type="password" class="form-control"   name = "password"  placeholder=" Enter  Password"  required>
+                                  <input type="password" class="form-control"   name = "password"  placeholder = " Enter  Password"  required>
+                                </div>
+                              </div>
+
+                              <div class="form-group row">
+                                <div class="col-3" style = "margin:auto">
+                                  <input type = "checkbox"  name = "rememberme" required> Remember Me 
                                 </div>
                               </div>
                         
