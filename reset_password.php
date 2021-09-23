@@ -26,47 +26,27 @@
     include 'dbcon.php';
 
     // button is pressed or used as target
-        if(isset($_POST['submit']))
+        if(isset($_GET['token']))
         {
-            $password = mysqli_real_escape_string ($conn,$_POST['password']);
+
+            $token = $_GET['token'];
+            $newpassword = mysqli_real_escape_string ($conn,$_POST['password']);
             $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
 
   // password is encyrpted here 
-            $pass = password_hash($password,PASSWORD_BCRYPT);
+            $pass = password_hash($newpassword,PASSWORD_BCRYPT);
             $cpass = password_hash($cpassword,PASSWORD_BCRYPT);
 
-            if($emailcount>0)
-            {
-               echo " email already exists ";
-            }
-            else
-             {
+           
                 if($password === $cpassword)
                 {
-
-                   $insertquery = "insert into registrationcc (username,email,mobile,password,cpassword,token,status) values('$username','$email','$mobile','$pass','$cpass','$token','inactive')";
-                   
+                    $updatequery = "update registrationcc set password = '$pass' where token = '$token' ;
                    $iquery = mysqli_query($conn,$insertquery);
 
                     if($iquery)
                       {
                          
-                          $subject = "Email Activation";
-                          $body = "Hi Mr. $username  Click here  too activate your Account 
-                           http://localhost:8000/activate.php?token=$token "; /* token is used and got from $token  */
-                           $sender_email = "From: sarbbsandhu555@gmail.com";  /* from which data is sent  */
-            
-                          //  In this  mail function is used to send mail and passed four parameters
-                          //  $email get  data from front end and sent to that  
-                                if(mail($email,$subject,$body,$sender_email))
-                                {
-                                    $_SESSION['msg'] = "  Check your mail to activate your account $email ";
-                                    header('location:login.php');
-
-                                }else
-                                {
-                                echo " Email Sending Failed......... ";
-                                }
+                       
                        }
                        else
                         {
@@ -78,8 +58,8 @@
                         }
                 }
                
-              }
-        }
+            }
+        
  ?>
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
