@@ -26,8 +26,8 @@
     include 'dbcon.php';
 
     // button is pressed or used as target
-        if(isset($_GET['token']))
-        {
+          if(isset($_GET['token']))
+         {
 
             $token = $_GET['token'];
             $newpassword = mysqli_real_escape_string ($conn,$_POST['password']);
@@ -52,11 +52,23 @@
                        else
                         {
                             $_SESSION['passmsg'] = "  Oops! Your Password has not  been Updated ";
-                            header('location:login.php');
+                            header('location:reset_password.php');
                             
                         }
                 }
+                else
+                {
+                   $_SESSION['passmsg'] = " Password is  not Matching ";
+                    
+                            
+                }
                
+            }else
+            {
+
+
+              echo " Token not Found ";
+
             }
         
  ?>
@@ -66,7 +78,20 @@
                             
                             <br>
 
-                            <span> -----------  OR ---------  </span>
+                            <p> 
+                            <?php 
+                                if(isset($_SESSION['passmsg']))
+                                {
+                                     echo $_SESSION['passmsg'];
+
+                                }else
+                                {
+                                    
+                                    echo $_SESSION['passmsg'] = "";
+
+                                }
+                            
+                            ?></p>
                             <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                                
                                
