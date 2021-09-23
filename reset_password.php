@@ -26,10 +26,15 @@
     include 'dbcon.php';
 
     // button is pressed or used as target
+
+    if(isset($_POST['submit']))
+    {
           if(isset($_GET['token']))
          {
 
             $token = $_GET['token'];
+
+
             $newpassword = mysqli_real_escape_string ($conn,$_POST['password']);
             $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
 
@@ -71,6 +76,7 @@
 
             }
         
+ }
  ?>
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
@@ -92,7 +98,7 @@
                                 }
                             
                             ?></p>
-                            <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
+                            <form action = "/" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                                
                                
                               <div class = "form-group row">
