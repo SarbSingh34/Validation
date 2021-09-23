@@ -157,6 +157,9 @@
                             <button type = "submit" name = "submit" class="btn btn-primary"> Login Now  </button>
                             <br>
                             <br>
+                            <a href = "/" style = "color:black"> Forget Your Password No Worry   </a>    <a href = "/recover_email.php">  Click here    </a> 
+                            <br>
+                            <br>
                             <a href = "/" style = "color:black"> Don't  Have an account?  </a>    <a href = "/"> Signup here   </a> 
                         </div>
                         </div>
