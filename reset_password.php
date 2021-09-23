@@ -40,8 +40,8 @@
            
                 if($password === $cpassword)
                 {
-                    $updatequery = "update registrationcc set password = '$pass' where token = '$token' ;
-                   $iquery = mysqli_query($conn,$insertquery);
+                    $updatequery = "update registrationcc set password = '$pass' where token = '$token'" ;
+                   $iquery = mysqli_query($conn,$updatequery);
 
                     if($iquery)
                       {
