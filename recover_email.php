@@ -39,7 +39,7 @@
 
                     if($emailcount>0)
                         {
-                          $subject = "Email Activation";
+                          $subject = "Password Reset ";
                           $body = "Hi Mr. $username  Click here  too activate your Account 
                            http://localhost:8000/activate.php?token=$token "; /* token is used and got from $token  */
                            $sender_email = "From: sarbbsandhu555@gmail.com";  /* from which data is sent  */
