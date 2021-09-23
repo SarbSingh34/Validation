@@ -42,8 +42,8 @@
 
                            $userdata =  mysqli_fetch_array($query);
 
-                           $username = $userdata['$username'];
-                           $token = $userdata['$token'];
+                           $username = $userdata['username'];
+                           $token = $userdata['token'];
 
 
                           $subject = " Password Reset ";
