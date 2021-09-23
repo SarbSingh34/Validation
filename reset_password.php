@@ -45,16 +45,15 @@
 
                     if($iquery)
                       {
-                         
+                         $_SESSION['msg'] = " Your Password has been Updated ";
+                         header('location:login.php');
                        
                        }
                        else
                         {
-                          ?>
-                            <script>
-                                alert(" Insertion  error ");
-                            </script>
-                          <?php
+                            $_SESSION['passmsg'] = "  Oops! Your Password has not  been Updated ";
+                            header('location:login.php');
+                            
                         }
                 }
                
