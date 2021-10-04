@@ -84,7 +84,7 @@
      ?>
                   <h1 style  = "text-align: center;"> Create Account </h1>
                   <h6  style  = "text-align: center;"> Get Started with your free Account </h6>
-            <div class = "first-middle" style = "text-align: center;">
+                     <div class = "first-middle" style = "text-align: center;">
                                <button type="button" class="btn btn-danger btn-md"> Login via Gmail </button> 
                             <br>
                             <br>
@@ -112,7 +112,7 @@
 
                             </div>
                             <!-- Code in action is used from saving from SQL injection  and shows that code is written in same where session starts or present  -->
-                            <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
+                    <form action = "<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method = "POST" class = "new" style = "text-align: center;margin: auto;">
                               
                             <!-- (For EMail) LINE 4 IS used to give (value = "" ) to write in box Automatically  -->
                               <div class="form-group row">

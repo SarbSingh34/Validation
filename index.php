@@ -30,7 +30,7 @@
         {
             $username = mysqli_real_escape_string($conn, $_POST['username']);
             $email =  mysqli_real_escape_string ($conn,$_POST['email']);
-            $mobile = mysqli_real_escape_string ( $conn,$_POST['mobile']);
+            $mobile = mysqli_real_escape_string ($conn,$_POST['mobile']);
             $password = mysqli_real_escape_string ($conn,$_POST['password']);
             $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
 
@@ -41,12 +41,12 @@
             // here token is created for every diff. email id verification
             // bin2hex convert digit from binary to hex 
             // random bytes are  used to generate random string length of 15(mentioned)
-            $token = bin2hex(random_bytes(15));
+               $token = bin2hex(random_bytes(15));
 
  // this query is used to first select if same mail id 
  //  in second line check this in database  
-            $emailquery = " select  * from registrationcc  where email = '$email' ";
-            $query = mysqli_query($conn,$emailquery);
+                $emailquery = " select  * from registrationcc  where email = '$email' ";
+                $query = mysqli_query($conn,$emailquery);
 
 // check if this line or mail exists more than 0 zero 
             $emailcount = mysqli_num_rows($query);
@@ -76,8 +76,8 @@
                           //  $email get  data from front end and sent to that  
                            if(mail($email,$subject,$body,$sender_email))
                              {
-                                $_SESSION['msg'] = "  Check your mail to activate your account $email ";
-                                header('location:login.php');
+                                $_SESSION['msg'] = "  Check your mail to Activate your account  $email ";
+                                   header('location:login.php');
 
                               }else
                              {
