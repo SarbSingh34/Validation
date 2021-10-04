@@ -16,15 +16,15 @@
 
  <?php 
 
-if(isset($_POST['submit']))
-  {
-     $username = mysqli_real_escape_string($conn, $_POST['username']);
-     $email =  mysqli_real_escape_string ($conn,$_POST['email']);
-     $mobile = mysqli_real_escape_string ( $conn,$_POST['mobile']);
-     $password = mysqli_real_escape_string ($conn,$_POST['password']);
-     $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
-  
-  }
+  if(isset($_POST['submit']))
+
+    {
+      $username = mysqli_real_escape_string($conn, $_POST['username']);
+      $email =  mysqli_real_escape_string ($conn,$_POST['email']);
+      $mobile = mysqli_real_escape_string ( $conn,$_POST['mobile']);
+      $password = mysqli_real_escape_string ($conn,$_POST['password']);
+      $cpassword =  mysqli_real_escape_string($conn,$_POST['cpassword']);
+    }
 
  ?>
 
